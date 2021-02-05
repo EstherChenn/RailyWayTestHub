@@ -1,0 +1,20 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="接口测试集合" verbose="1" preserve-order="true">
+    <parameter name="report.config" value="src/main/resources/config/report/extent-config.xml"/>
+    <parameter name="system.info" value="reporter.config.MySystemInfo"/>
+
+    <suite-files>
+        <suite-file path="search/SearchTags-TestSuite.xml"/>
+    </suite-files>
+
+    <suite-files>
+        <suite-file path="search/User.xml"/>
+    </suite-files>
+
+
+    <listeners>
+        <!--测试报告监听器：修改自己的包名地址-->
+        <listener class-name="reporter.Listener.MyExtentTestNgFormatter"/>
+    </listeners>
+</suite>
